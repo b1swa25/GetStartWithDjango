@@ -2,11 +2,10 @@
 
 <!-- Override the title block defined in base.html -->
 {% block title %}
-    b1swa - Home
+    Home |
 {% endblock title %}
 
 <!-- Override the body block defined in base.html -->
 {% block body %}
-    
-
+    This is boody block
 {% endblock body %}
