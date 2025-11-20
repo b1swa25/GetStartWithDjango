@@ -1,7 +1,214 @@
 {% extends "base.html" %}
 
 <!-- Override the title block defined in base.html -->
-{% block title %}About{% endblock title %}
+{% block title %}About | {% endblock title %}
 
 <!-- Override the body block defined in base.html -->
-{% block body %}This is About Block{% endblock body %}
+{% block body %}
+
+<style>
+    /* General Styles (Matching Contact Page) */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        color: #333;
+    }
+
+    .container {
+        width: 80%;
+        max-width: 1200px;
+        margin: 50px auto;
+        padding: 40px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+
+    h1 {
+        text-align: center;
+        color: #007bff;
+        margin-bottom: 10px;
+    }
+    
+    /* Section Styles */
+    .section {
+        margin-bottom: 50px;
+        padding: 20px 0;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .section:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+    }
+
+    .section h2 {
+        color: #007bff;
+        border-left: 5px solid #007bff;
+        padding-left: 15px;
+        margin-bottom: 20px;
+        font-size: 1.8em;
+    }
+
+    .section p {
+        line-height: 1.8;
+        margin-bottom: 15px;
+    }
+    
+    .section ul {
+        list-style: disc;
+        padding-left: 25px;
+    }
+    
+    .section li {
+        margin-bottom: 10px;
+    }
+
+    /* Mission/Vision Styles (Centered emphasis) */
+    .mission-vision {
+        text-align: center;
+        background-color: #f9f9f9;
+        padding: 30px;
+        border-radius: 6px;
+    }
+
+    .mission-vision h3 {
+        color: #333;
+        margin-top: 0;
+    }
+    
+    /* Team Section Styles (Flexbox) */
+    .team-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+    
+    .team-member {
+        background-color: #fff;
+        padding: 15px;
+        border-radius: 6px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        text-align: center;
+        width: 220px; /* Fixed width for card layout */
+    }
+    
+    .member-photo {
+        width: 100px;
+        height: 100px;
+        background-color: #ccc;
+        border-radius: 50%;
+        margin: 0 auto 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #555;
+        font-weight: bold;
+    }
+    
+    .team-member h4 {
+        margin: 5px 0 3px;
+        color: #333;
+    }
+    
+    .team-member p {
+        font-size: 0.9em;
+        color: #777;
+        margin: 0;
+    }
+
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+        .container {
+            width: 95%;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .team-grid {
+            flex-direction: column;
+            align-items: center;
+        }
+        .team-member {
+            width: 80%; /* Adjust width for better stacking on mobile */
+        }
+        /* Fix for mission/vision layout on small screens */
+        .mission-vision > div {
+             flex-direction: column;
+        }
+    }
+</style>
+
+<div class="container">
+    <h1>Our Story</h1>
+    <p style="text-align: center; color: #555; margin-bottom: 40px;">Building something great, one step at a time.</p>
+    
+    <div class="section mission-vision">
+        <h2>Our Core Purpose</h2>
+        
+        <div style="display: flex; justify-content: space-around; gap: 30px; text-align: left;">
+            <div style="flex: 1;">
+                <h3>🎯 Mission</h3>
+                <p>To deliver innovative solutions that empower our clients to achieve their highest potential and create lasting success in a rapidly changing world.</p>
+            </div>
+            <div style="flex: 1;">
+                <h3>💡 Vision</h3>
+                <p>To be the globally recognized leader in our industry, defined by integrity, pioneering technology, and unwavering commitment to customer satisfaction.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>The Journey So Far</h2>
+        <p>**[Your Company Name]** was founded in **[Year]** by **[Founder's Name]** with the simple goal of **[Initial Goal/Pain Point]**. What started as a small operation in a garage/dorm room quickly grew into a thriving business, driven by a passion for **[Industry/Value]**.</p>
+        <p>Over the years, we've navigated market challenges, celebrated major milestones, and continually refined our approach. Today, we stand proud as a team of dedicated professionals committed to maintaining the standards of quality and service that defined us from day one.</p>
+    </div>
+    
+    <div class="section">
+        <h2>Our Values</h2>
+        <ul>
+            <li>**Integrity:** Conducting business with honesty and transparency.</li>
+            <li>**Innovation:** Continuously seeking better and more creative ways to solve problems.</li>
+            <li>**Customer Focus:** Placing the needs of our clients at the center of every decision.</li>
+            <li>**Collaboration:** Working together, internally and externally, to achieve shared goals.</li>
+        </ul>
+    </div>
+    
+    <div class="section">
+        <h2>Meet the Team</h2>
+        <div class="team-grid">
+            
+            <div class="team-member">
+                <div class="member-photo">Photo</div>
+                <h4>Jane Doe</h4>
+                <p>CEO & Founder</p>
+            </div>
+            
+            <div class="team-member">
+                <div class="member-photo">Photo</div>
+                <h4>John Smith</h4>
+                <p>Chief Operating Officer</p>
+            </div>
+            
+            <div class="team-member">
+                <div class="member-photo">Photo</div>
+                <h4>Sarah Lee</h4>
+                <p>Lead Developer</p>
+            </div>
+            
+            <div class="team-member">
+                <div class="member-photo">Photo</div>
+                <h4>Mike Johnson</h4>
+                <p>Head of Marketing</p>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+{% endblock body %}
